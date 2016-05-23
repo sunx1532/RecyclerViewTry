@@ -9,6 +9,8 @@ import android.support.v7.widget.RecyclerView;
 public class MainActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
+    private RecyclerView.Adapter mAdapter;
+    private GridLayoutManager mLayoutManager;
 
 
 
@@ -18,9 +20,10 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2);
-        gridLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        // 设置布局管理器
-        recyclerView.setLayoutManager(gridLayoutManager);
+        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+
+        mLayoutManager = new GridLayoutManager(this,4);
+
+        recyclerView.setLayoutManager(mLayoutManager);
     }
 }
